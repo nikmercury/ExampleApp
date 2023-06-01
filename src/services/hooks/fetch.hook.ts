@@ -17,7 +17,8 @@ export function useFetch<T>(url: string): FetchResult<T> {
       const response = await fetch(`${AppConfig.API_URL}${url}`);
       setData(await response.json());
     } catch (e) {
-      console.error(e);
+      // commented console.error due to unavailable example domain
+      //console.error(e);
     } finally {
       setLoading(false);
     }

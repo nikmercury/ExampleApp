@@ -48,5 +48,6 @@ export const mockGetCards: GetCardsItem[] = [
     period_start: '2023-04-17 10:00:00',
     period_stop: null,
     type: CardType.TASKS,
+    description: 'Моем посуду в четвертый раз',
   },
 ];

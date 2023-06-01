@@ -1,13 +1,22 @@
-import { Text, View } from 'react-native';
+import { useCallback } from 'react';
+import { Pressable, Text } from 'react-native';
 
-import { GetCards } from '../../services';
+import type { GetCardsItem } from '../../services';
 
-export const Card = (props: GetCards) => {
-  const {} = props;
+interface CardProps extends GetCardsItem {
+  onCardPress(item: GetCardsItem): void;
+}
+
+export const Card = (props: CardProps) => {
+  const { name, onCardPress } = props;
+
+  const onPress = useCallback(() => {
+    onCardPress(props);
+  }, [onCardPress, props]);
 
   return (
-    <View>
-      <Text>CardScreen</Text>
-    </View>
+    <Pressable onPress={onPress}>
+      <Text>{name}</Text>
+    </Pressable>
   );
 };
