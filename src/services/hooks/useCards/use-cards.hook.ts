@@ -20,7 +20,7 @@ export type GetCardsItem = {
   period_stop: string | null;
   type: CardType;
   description?: string | null;
-  every_month?: boolean[] | null;
+  every_month?: number[] | null;
 };
 
 export const useCards = () => {
