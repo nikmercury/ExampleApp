@@ -30,7 +30,7 @@ export const HomeScreen = () => {
 
   useEffect(() => {
     const timerId = setTimeout(refetchCards, CARDS_REFETCH_TIMEOUT);
-    return () => clearInterval(timerId);
+    return () => clearTimeout(timerId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
